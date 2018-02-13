@@ -15,7 +15,7 @@ public class PriorityQueue
 			head = newNode;
 		}
 		
-		else if (newNode.data >= head.data)
+		else if (newNode.data > head.data)
 		{
 			if (temp.next == null)
 			{
@@ -24,24 +24,32 @@ public class PriorityQueue
 			}
 			else
 			{
-				while (temp.data < newNode.data && temp.next != null){
-					if (temp.next != null){
-					temp = temp.next;
+				Node temp4 = temp;
+				int counter = 0;
+				while (temp4.data < newNode.data && temp4.next != null){
+					if (temp4.next != null){
+					temp4 = temp4.next;
+					counter++;
 					}
-					//System.out.println(newNode.data);
+					System.out.println(newNode.data);
 				}
 				
-				if (temp.next == null){
+				for (int i =0; i != counter-1; i++)
+				{
+					temp = temp.next;
+				}
+				
+				if (temp.next != null){
+					Node temp2 = temp.next;
 					temp.next = newNode;
+					temp = temp.next;
+					temp.next = temp2;
 					//System.out.println(newNode.data);
 				}
 				
 				else {
 					//System.out.println(newNode.data);
-					Node temp2 = temp.next;
 					temp.next = newNode;
-					temp = temp.next;
-					temp.next = temp2;
 				}
 			}
 		}
@@ -61,5 +69,7 @@ public class PriorityQueue
 		}
 		
 	}
+	
+
 	
 }
