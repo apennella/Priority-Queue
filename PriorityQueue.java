@@ -31,7 +31,7 @@ public class PriorityQueue
 				int counter = 0;
 				
 				/* initiates the counter variable for the next loop. It navigates to where the node needs to go*/
-				while (temp4.data < newNode.data && temp4.next != null){
+				while (temp4.data <= newNode.data && temp4.next != null){
 					if (temp4.next != null){
 					temp4 = temp4.next;
 					counter++;

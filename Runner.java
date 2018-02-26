@@ -12,7 +12,12 @@ public class Runner {
 	queue.enqueue(3 , "job1");
 	queue.enqueue(4 , "job1");
 	queue.enqueue(3 , "job2");
+	queue.enqueue(3 , "job3");
 	queue.dequeue();
+	queue.dequeue();
+	queue.dequeue();
+	queue.dequeue();
+	
 
 	queue.print();
  }
